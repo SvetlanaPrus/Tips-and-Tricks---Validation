@@ -1,0 +1,16 @@
+@use '../mixins.scss';
+
+.login {
+    @include mixins.center-layout;
+
+    display: flex;
+    flex-direction: column;
+    grid-area: hero;
+    min-height: calc(100vh - 48px);
+
+    & form {
+        @include mixins.paper;
+
+        padding: 24px;
+    }
+}
