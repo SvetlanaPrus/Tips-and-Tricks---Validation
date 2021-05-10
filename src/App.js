@@ -3,10 +3,12 @@ import { Routes, Route, Outlet, Navigate } from 'react-router-dom';
 
 /* Components */
 
+import {HomePage} from './pages/home';
+
 export const App = () => {
     return (
         <>
-            <h1>Добро пожаловать на профессиональный курс по Rect, Redux, MobX, TypeScript</h1>
+           <HomePage/>
         </>
     );
 };
