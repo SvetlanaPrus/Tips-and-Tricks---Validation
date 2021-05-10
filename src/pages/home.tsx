@@ -1,9 +1,10 @@
-import {icons} from '../theme/icons/tag';
-import {Nav} from '../components/Nav'
+import { icons } from '../theme/icons/tag';
+import { Nav } from '../components/Nav'
 
-export const HomePage = ()=>{
+export const HomePage = () => {
     return (
         <section className="layout">
+            <Nav/>
             <section className="hero">
                 <div className="title">
                     <h1>Типсы и Триксы</h1>
@@ -36,7 +37,6 @@ export const HomePage = ()=>{
                         </footer>
                     </article>
             </section>
-            <Nav/>
         </section>
     )
 }
