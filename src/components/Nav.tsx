@@ -2,7 +2,7 @@ import { icons } from "../theme/icons/nav"
 
 export const Nav = ()=>{
     return (
-        <nav>
+        <nav className="nav">
             <h1>Т и Т</h1>
             <a>
                 <icons.Home/> Все темы

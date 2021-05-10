@@ -15,8 +15,8 @@ export const HomePage = ()=>{
                         <icons.React/> React
                     </span>
                 </div>
-
-                <section className="tip-list">
+            </section>
+            <section className="tip-list">
                     <article>
                         <header>
                             <icons.React/> <h1>Заголовок</h1>
@@ -35,7 +35,6 @@ export const HomePage = ()=>{
                             <a>&nbsp; Читать полностью &rarr;</a>
                         </footer>
                     </article>
-                </section>
             </section>
             <Nav/>
         </section>
