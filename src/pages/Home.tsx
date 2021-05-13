@@ -1,5 +1,5 @@
 import { icons } from '../theme/icons/tag';
-import { Nav } from '../components/Nav'
+import { Nav } from '../components/Nav';
 
 export const HomePage = () => {
     return (
