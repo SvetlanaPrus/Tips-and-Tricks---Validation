@@ -7,10 +7,13 @@ import { App } from './App';
 /* Instruments */
 import './theme/main.scss';
 import { SettingsProvider } from './lib/settingsContext';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 render(
     <SettingsProvider>
-        <App />
+        <Router>
+            <App />
+        </Router>
     </SettingsProvider>,
     document.getElementById('root'),
 );
