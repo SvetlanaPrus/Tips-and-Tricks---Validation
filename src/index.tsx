@@ -7,13 +7,15 @@ import { App } from './App';
 
 /* Instruments */
 import './theme/main.scss';
-import { SettingsProvider } from './lib/settingsContext';
+import { SettingsProvider, SelectedTagProvider } from './lib';
 
 render(
-    <SettingsProvider>
-        <Router>
-            <App />
-        </Router>
-    </SettingsProvider>,
+    <SelectedTagProvider>
+        <SettingsProvider>
+            <Router>
+                <App />
+            </Router>
+        </SettingsProvider>
+    </SelectedTagProvider>,
     document.getElementById('root'),
 );

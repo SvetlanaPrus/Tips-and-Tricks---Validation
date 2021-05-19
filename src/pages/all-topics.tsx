@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Hero, Nav, TipList } from '../components';
 
 export const AllTopicsPage = () => {
@@ -5,8 +6,8 @@ export const AllTopicsPage = () => {
         <>
             <section className = 'layout'>
                 <Nav />
-                <Hero />
-                <TipList />
+                <Hero tipViewMode = 'all-topics' />
+                <TipList tipViewMode = 'all-topics' />
             </section>
         </>
     );

@@ -27,15 +27,15 @@ export const TipView = () => {
         <>
             <article>
                 <header>
-                    <TagIcon /> <h1>{fetchify(false, tipToView?.title)}</h1>
+                    <TagIcon /> <h1>{ fetchify(false, tipToView?.title) }</h1>
                 </header>
 
                 <main>
                     <time>
                         <TagIcon />
                         <div>
-                            <span>🚀 {fetchify(false, formatDate(tipToView?.created))}</span>
-                            <span>👨🏼‍🚀 Автор: {fetchify(false, tipToView?.author)}</span>
+                            <span>🚀 { fetchify(false, formatDate(tipToView?.created)) }</span>
+                            <span>👨🏼‍🚀 Автор: { fetchify(false, tipToView?.author) }</span>
                         </div>
                     </time>
                 </main>
@@ -44,7 +44,7 @@ export const TipView = () => {
                 </footer>
             </article>
 
-            <main>{fetchify(false, tipToView?.body)}</main>
+            <main>{ fetchify(false, tipToView?.body) }</main>
         </>
     );
 };

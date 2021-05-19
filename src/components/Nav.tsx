@@ -3,8 +3,9 @@
 import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 
+/* Other */
 import { icons } from '../theme/icons/nav';
-import { Context } from '../lib/settingsContext';
+import { Context } from '../lib';
 
 export const Nav = () => {
     const [isSettingsOpen, setSettingsOpen] = useContext(Context);
