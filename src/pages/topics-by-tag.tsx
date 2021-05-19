@@ -1,6 +1,6 @@
 import { Hero, Nav, TipList } from '../components';
 
-export const AllTopicsPage = () => {
+export const TopicsByTagPage = () => {
     return (
         <>
             <section className = 'layout'>

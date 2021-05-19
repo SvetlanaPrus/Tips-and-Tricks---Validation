@@ -2,8 +2,8 @@ import { Tag } from './Tag';
 
 export const Tags = () => {
     return (
-        <div className="tags">
+        <div className = 'tags'>
             <Tag />
         </div>
-    )
-}
+    );
+};

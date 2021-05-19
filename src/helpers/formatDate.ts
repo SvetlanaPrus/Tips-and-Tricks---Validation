@@ -5,7 +5,7 @@ export const formatDate = (date) => {
     }
 
     const formattedDate = new Date(date).toLocaleDateString('ru-RU', {
-        hour: '2-digit',
+        hour:   '2-digit',
         minute: '2-digit',
     });
 

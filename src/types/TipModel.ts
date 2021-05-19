@@ -1,4 +1,4 @@
-export interface TipModel {
+export interface ITipModel {
     id: string;
     title: string;
     preview: string;

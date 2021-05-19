@@ -1,5 +1,6 @@
 /* Core */
 import { render } from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 /* Components */
 import { App } from './App';
@@ -7,7 +8,6 @@ import { App } from './App';
 /* Instruments */
 import './theme/main.scss';
 import { SettingsProvider } from './lib/settingsContext';
-import { BrowserRouter as Router } from 'react-router-dom';
 
 render(
     <SettingsProvider>

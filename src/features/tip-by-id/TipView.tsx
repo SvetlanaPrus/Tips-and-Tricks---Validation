@@ -1,27 +1,30 @@
-import React, { useEffect } from "react"
-import { useNavigate, useParams } from "react-router"
-import { fetchify, formatDate, getTagIcon } from "../../helpers"
+import { useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { fetchify, formatDate, getTagIcon } from '../../helpers';
 import tips from '../../mock-data/tips.json';
- 
-export const TipView = ()=>{
+
+export const TipView = () => {
     const params = useParams();
     const navigate = useNavigate();
 
-    const tipToView = tips.find(tip=> tip.id === params.id);
+    const tipToView = tips.find((tip) => tip.id === params.id);
 
-    useEffect(()=>{
-        tips !== null && !tipToView && navigate('..', {
-            replace: true
-        });
+    useEffect(() => {
+        if (tips !== null && !tipToView) {
+            navigate('..', {
+                replace: true,
+            });
+        }
     }, [tips, tipToView]);
 
     const TagIcon = getTagIcon(tipToView?.tag.name);
 
-    const goBack = ()=>{
+    const goBack = () => {
         navigate('..');
-    }
-    return(
-     <>
+    };
+
+    return (
+        <>
             <article>
                 <header>
                     <TagIcon /> <h1>{fetchify(false, tipToView?.title)}</h1>
@@ -31,24 +34,17 @@ export const TipView = ()=>{
                     <time>
                         <TagIcon />
                         <div>
-                            <span>
-                                🚀{' '}
-                                {fetchify(
-                                    false,
-                                    formatDate(tipToView?.created),
-                                )}
-                            </span>
-                            <span>
-                                👨🏼‍🚀 Автор: {fetchify(false, tipToView?.author)}
-                            </span>
+                            <span>🚀 {fetchify(false, formatDate(tipToView?.created))}</span>
+                            <span>👨🏼‍🚀 Автор: {fetchify(false, tipToView?.author)}</span>
                         </div>
                     </time>
                 </main>
                 <footer>
-                    <a onClick={goBack}>&larr;&nbsp;Назад</a>
+                    <a onClick = { goBack }>&larr;&nbsp;Назад</a>
                 </footer>
             </article>
 
             <main>{fetchify(false, tipToView?.body)}</main>
-        </>)
-}
+        </>
+    );
+};

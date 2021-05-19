@@ -4,7 +4,7 @@ export const Tip = () => {
     return (
         <article>
             <header>
-                <icons.React/> <h1>Заголовок</h1>
+                <icons.React /> <h1>Заголовок</h1>
             </header>
             <main>
                 <time>
@@ -20,5 +20,5 @@ export const Tip = () => {
                 <a>&nbsp; Читать полностью &rarr;</a>
             </footer>
         </article>
-    )
+    );
 };
