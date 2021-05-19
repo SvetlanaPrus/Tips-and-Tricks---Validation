@@ -556,6 +556,7 @@
       "error",
       "after-props"
     ],
-    "react/react-in-jsx-scope": 0
+    "react/react-in-jsx-scope": 0,
+    "react/jsx-space-before-closing": ["warn", "always"]
   }
 }
