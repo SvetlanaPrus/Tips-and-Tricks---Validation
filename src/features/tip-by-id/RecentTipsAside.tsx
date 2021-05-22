@@ -1,30 +1,35 @@
 // @ts-nocheck
-import React, { FC } from 'react';
+/* Core */
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
-import data from '../../mock-data/tips.json';
-import { formatDate, getTagIcon, sortByDate } from '../../helpers';
+
+/* Instruments */
+import { sortByDate, formatDate, getTagIcon } from '../../helpers';
+
+/* Mock */
+import tips from '../../mock-data/tips.json';
 
 export const RecentTipsAside: FC = () => {
-    const tips = data;
+    const recentTipsJSX = tips
+        ?.sort(sortByDate)
+        .slice(0, 5)
+        .map((tip) => {
+            const RecentTipTagIcon = getTagIcon(tip.tag.name);
 
-    // ***Check later. Check timeDate.
-    const tipsList = tips.sort(sortByDate).slice(0, 5).map((el) => {
-        const TagIcon = getTagIcon(el.tag.name);
-
-        return (
-            <Link key = { el.id } to = { `/topics-by-tag/${el.id}` } >
-                <h3> { el.title } </h3>
-                <time>
-                    <TagIcon />
-                    { formatDate(el.created) }
-                </time>
-            </Link>);
-    });
+            return (
+                <Link key = { tip.id } to = { `../${tip.id}` }>
+                    <h3>{ tip.title }</h3>
+                    <time>
+                        <RecentTipTagIcon /> { formatDate(tip?.created) }
+                    </time>
+                </Link>
+            );
+        });
 
     return (
         <aside className = 'recent-tips'>
             <h1>Свежие типсы</h1>
-            { tipsList }
+            { recentTipsJSX }
         </aside>
     );
 };
