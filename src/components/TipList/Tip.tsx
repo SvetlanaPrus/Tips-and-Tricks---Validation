@@ -1,24 +1,36 @@
-import { icons } from '../../theme/icons/tag';
+// @ts-nocheck
+/* Core */
+import { FC } from 'react';
+import { Link } from 'react-router-dom';
 
-export const Tip = () => {
+/* Other */
+import { getTagIcon, formatDate } from '../../helpers';
+
+export const Tip: FC = (props) => {
+    const {
+        id, tag, title, preview, author, created,
+    } = props;
+    const TagIcon = getTagIcon(tag.name);
+
     return (
         <article>
             <header>
-                <icons.React/> <h1>Заголовок</h1>
+                <TagIcon /> <h1>{ title }</h1>
             </header>
             <main>
                 <time>
+                    <TagIcon />
                     <div>
-                        <span> время</span>
-                        <span> Автор: автор</span>
+                        <span>🚀 { formatDate(created) }</span>
+                        <span>👨🏼‍🚀 Автор: { author }</span>
                     </div>
                 </time>
-                <h2>Заголовк</h2>
-                <p>Превью-текст</p>
+                <h2>{ title }</h2>
+                <p>{ preview }</p>
             </main>
             <footer>
-                <a>&nbsp; Читать полностью &rarr;</a>
+                <Link to = { id }>📖 &nbsp;Читать полностью &rarr;</Link>
             </footer>
         </article>
-    )
+    );
 };

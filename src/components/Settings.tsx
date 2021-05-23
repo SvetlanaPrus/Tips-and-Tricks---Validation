@@ -1,21 +1,21 @@
-//@ts-nocheck
+// @ts-nocheck
 /* Core */
-import { useContext, useEffect } from 'react';
+import { FC, useContext } from 'react';
 
 /* Instruments */
 import { Context } from '../lib/settingsContext';
 
-export const Settings: React.FC = () => {
+export const Settings: FC = () => {
     const [isSettingsOpen, setSettingsOpen] = useContext(Context);
 
     return (
-        <section className={`settings ${isSettingsOpen ? 'open' : 'closed'}`}>
+        <section className = { `settings ${isSettingsOpen ? 'open' : 'closed'}` }>
             <header>
                 <h1>Настройки</h1>
             </header>
 
             <footer>
-                <button onClick={() => setSettingsOpen(false)}>Закрыть</button>
+                <button onClick = { () => setSettingsOpen(false) }>Закрыть</button>
             </footer>
         </section>
     );

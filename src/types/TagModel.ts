@@ -15,7 +15,7 @@ export enum TagEnum {
     MACOS = 'macOS',
 }
 
-export interface TagModel {
+export interface ITagModel {
     id: string;
     name: TagEnum;
 }

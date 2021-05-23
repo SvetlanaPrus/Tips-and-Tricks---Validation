@@ -1,11 +1,12 @@
 // @ts-nocheck
 /* Core */
-import { createContext, useState } from 'react';
+import { FC, createContext, useState } from 'react';
 
 export const Context = createContext([false, () => null]);
 
-export const SettingsProvider: React.FC = props => {
+export const SettingsProvider: FC = (props) => {
     const state = useState(false);
 
-    return <Context.Provider value={state}>{props.children}</Context.Provider>;
+    return <Context.Provider value = { state }>{ props.children }</Context.Provider>;
 };
+

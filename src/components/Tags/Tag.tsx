@@ -1,9 +1,22 @@
-import { icons } from '../../theme/icons/tag';
+// @ts-nocheck
+/* Core */
+import { FC } from 'react';
 
-export const Tag = () => {
+/* Other */
+import { getTagIcon } from '../../helpers';
+
+export const Tag: FC = ({
+    id, name, dataActive, handleTagClick,
+}) => {
+    const TagIcon = getTagIcon(name);
+
     return (
-        <span className="tag">
-            <icons.React/> React
+        <span
+            data-active = { dataActive }
+            onClick = { () => handleTagClick(id) }
+            className = 'tag'>
+            <TagIcon /> { name }
         </span>
-    )
-}
+    );
+};
+
