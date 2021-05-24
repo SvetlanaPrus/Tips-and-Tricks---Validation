@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { fetchify, formatDate, getTagIcon } from '../../helpers';
 import tips from '../../mock-data/tips.json';

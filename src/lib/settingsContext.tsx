@@ -1,6 +1,6 @@
 // @ts-nocheck
 /* Core */
-import { FC, createContext, useState } from 'react';
+import React, { FC, createContext, useState } from 'react';
 
 export const Context = createContext([false, () => null]);
 
