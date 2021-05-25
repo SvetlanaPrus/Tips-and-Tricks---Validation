@@ -1,6 +1,6 @@
 // @ts-nocheck
 /* Core */
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 
 /* Other */

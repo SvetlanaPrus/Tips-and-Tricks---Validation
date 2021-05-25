@@ -1,6 +1,6 @@
 // @ts-nocheck
 /* Core */
-import {
+import React, {
     FC, useContext, useEffect,
 } from 'react';
 
@@ -28,10 +28,7 @@ export const Tags: FC = ({ tipViewMode }) => {
 
     const tagsJSX = tags?.map((tag) => <Tag
         key = { tag.id } { ...tag }
-        dataActive = {
-            tipViewMode === 'all-topics'
-            || selectedTagId === tag.id
-        }
+        dataActive = { tipViewMode === 'all-topics' || selectedTagId === tag.id }
         handleTagClick = { handleTagClick } />);
 
     return (

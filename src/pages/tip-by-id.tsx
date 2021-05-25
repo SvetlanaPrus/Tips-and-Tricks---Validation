@@ -1,18 +1,21 @@
 /* Core */
-import { FC } from 'react';
+import React, { FC } from 'react';
 
 /* Components */
 import { Nav } from '../components';
-import { TipView } from '../features/tip-by-id';
+import { TagsAside, TipView, RecentTipsAside } from '../features/tip-by-id';
 
 export const TipByIdPage: FC = () => {
     return (
         <>
             <section className = 'layout'>
                 <Nav />
-
                 <section className = 'tip-view-layout'>
                     <TipView />
+                    <section className = 'asides'>
+                        <RecentTipsAside />
+                        <TagsAside />
+                    </section>
                 </section>
             </section>
         </>

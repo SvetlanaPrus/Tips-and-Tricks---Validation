@@ -1,6 +1,6 @@
 // @ts-nocheck
 /* Core */
-import { FC, useContext } from 'react';
+import React, { FC, useContext } from 'react';
 
 /* Components */
 import { Tip } from './Tip';
