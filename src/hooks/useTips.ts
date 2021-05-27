@@ -2,6 +2,7 @@
 import { useQuery } from 'react-query';
 import { api } from '../api';
 
-export const useTags = () => {
-    return useQuery('tags', api.getTags);
+export const useTips = () => {
+    return useQuery('tips', api.getTips);
 };
+

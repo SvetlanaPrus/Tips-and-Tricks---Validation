@@ -1,6 +1,8 @@
 // @ts-nocheck
 /* Components */
+import React from 'react';
 import { Tags } from './Tags';
+
 
 export const Hero = ({ tipViewMode }) => {
     return (

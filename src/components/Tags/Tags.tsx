@@ -1,8 +1,6 @@
 // @ts-nocheck
 /* Core */
-import {
-    FC, useContext, useEffect,
-} from 'react';
+import React, { FC, useContext, useEffect } from 'react';
 
 /* Components */
 import { Tag } from './Tag';

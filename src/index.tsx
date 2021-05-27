@@ -1,4 +1,5 @@
 /* Core */
+import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { QueryClientProvider } from 'react-query';
@@ -10,6 +11,7 @@ import { App } from './App';
 import './theme/main.scss';
 import { SettingsProvider, SelectedTagProvider } from './lib';
 import { queryClient } from './lib/react-query';
+
 
 render(
     <QueryClientProvider client = { queryClient }>

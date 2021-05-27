@@ -1,5 +1,6 @@
 // @ts-nocheck
 /* Components */
+import React from 'react';
 import { Hero, Nav, TipList } from '../components';
 
 export const TopicsByTagPage = () => {

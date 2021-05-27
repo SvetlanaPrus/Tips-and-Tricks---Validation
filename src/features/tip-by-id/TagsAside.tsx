@@ -1,6 +1,6 @@
 // @ts-nocheck
 /* Core */
-import { FC, useContext } from 'react';
+import React, { FC, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
 
@@ -12,21 +12,26 @@ import { TagContext } from '../../lib';
 import { getTagIcon } from '../../helpers';
 
 /* Mock */
-import tags from '../../mock-data/tags.json';
+import { useTags } from '../../hooks';
 
 export const TagsAside: FC = observer(() => {
-    const [, setSelectedTagId] = useContext(TagContext);
+    const { data: tags } = useTags();
+    const [selectedTagId, setSelectedTagId] = useContext(TagContext);
+
+    useEffect(() => {
+        if (!selectedTagId && Array.isArray(tags)) {
+            setSelectedTag(tags[ 0 ].id);
+        }
+    }, []);
 
     const tagsJSX =  tags?.map((tag) => {
         const TagIcon = getTagIcon(tag.name);
 
         return (
-            <Link to = '/topic-by-tag' key = { tag.id }>
+            <Link to = '/topics-by-tag' key = { tag.id }>
                 <Tag
                     handleTagClick = { () => setSelectedTagId(tag.id) }
-                    dataActive = { false }
-                    key = { tag.id }
-                    name = { tag.name }>
+                    { ...tag }>
                     <TagIcon />
                 </Tag>
             </Link>
