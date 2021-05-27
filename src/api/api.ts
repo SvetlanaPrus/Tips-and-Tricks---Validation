@@ -1,7 +1,7 @@
 // @ts-nocheck
 /* Core */
+import waait from 'waait';
 import axios from 'axios';
-import { waait } from 'waait';
 
 export const api = {
     async getTags() {
@@ -23,7 +23,8 @@ export const api = {
             `${process.env.REACT_APP_API_URL}/tips/${id}`,
         );
 
-        await waait(2000);
+        await waait(1000);
+        console.log(tipById);
 
         return tipById;
     },

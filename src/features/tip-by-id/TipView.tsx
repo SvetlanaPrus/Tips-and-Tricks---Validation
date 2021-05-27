@@ -16,7 +16,7 @@ export const TipView = () => {
     }, [tipToView, isFetched]);
 
     console.log(tipToView);
-    const TagIcon = getTagIcon(tipToView?.tag?.name);
+    const TagIcon = isFetched ? getTagIcon(tipToView?.tag.name) : () => null;
 
     const goBack = () => {
         navigate('..');

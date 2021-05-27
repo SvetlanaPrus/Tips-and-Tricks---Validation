@@ -20,7 +20,7 @@ export const TagsAside: FC = observer(() => {
 
     useEffect(() => {
         if (!selectedTagId && Array.isArray(tags)) {
-            setSelectedTag(tags[ 0 ].id);
+            setSelectedTagId(tags[ 0 ].id);
         }
     }, []);
 
