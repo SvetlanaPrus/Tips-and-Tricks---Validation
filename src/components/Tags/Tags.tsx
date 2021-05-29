@@ -1,20 +1,18 @@
 // @ts-nocheck
 /* Core */
-import React, {
-    FC, useContext, useEffect,
-} from 'react';
+import React, { FC, useContext, useEffect } from 'react';
 
 /* Components */
 import { Tag } from './Tag';
 
 /* Other */
 import { TagContext } from '../../lib';
+import { useTags } from '../../hooks';
 
-/* Mock */
-import tags from '../../mock-data/tags.json';
 
 export const Tags: FC = ({ tipViewMode }) => {
     const [selectedTagId, setSelectedTagId] = useContext(TagContext);
+    const { data: tags } = useTags();
 
     useEffect(() => {
         if (!selectedTagId && Array.isArray(tags)) {
