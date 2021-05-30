@@ -15,7 +15,6 @@ export const TipView = () => {
         }
     }, [tipToView, isFetched]);
 
-    console.log(tipToView);
     const TagIcon = isFetched ? getTagIcon(tipToView?.tag.name) : () => null;
 
     const goBack = () => {
