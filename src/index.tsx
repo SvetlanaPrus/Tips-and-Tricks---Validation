@@ -12,6 +12,7 @@ import './theme/main.scss';
 import { SettingsProvider, SelectedTagProvider } from './lib';
 import { queryClient } from './lib/react-query';
 
+
 render(
     <QueryClientProvider client = { queryClient }>
         <SelectedTagProvider>

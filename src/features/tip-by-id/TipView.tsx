@@ -1,23 +1,22 @@
 import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { fetchify, formatDate, getTagIcon } from '../../helpers';
-import tips from '../../mock-data/tips.json';
+import { useTipById } from '../../hooks/useTipById';
+// import { useTipById } from '../../hooks/react-query/useTipById';
 
 export const TipView = () => {
-    const params = useParams();
+    const { id } = useParams();
+    const { data: tipToView, isFetched } = useTipById(id);
     const navigate = useNavigate();
 
-    const tipToView = tips.find((tip) => tip.id === params.id);
-
     useEffect(() => {
-        if (tips !== null && !tipToView) {
-            navigate('..', {
-                replace: true,
-            });
+        if (!tipToView && isFetched) {
+            navigate('..', { replace: true });
         }
-    }, [tips, tipToView]);
+    }, [tipToView, isFetched]);
 
-    const TagIcon = getTagIcon(tipToView?.tag.name);
+    console.log(tipToView);
+    const TagIcon = isFetched ? getTagIcon(tipToView?.tag.name) : () => null;
 
     const goBack = () => {
         navigate('..');
@@ -27,7 +26,7 @@ export const TipView = () => {
         <>
             <article>
                 <header>
-                    <TagIcon /> <h1>{ fetchify(false, tipToView?.title) }</h1>
+                    <TagIcon /> <h1>{ fetchify(isFetched, tipToView?.title) }</h1>
                 </header>
 
                 <main>
