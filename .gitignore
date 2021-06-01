@@ -22,3 +22,5 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#/* Svetlana: peresmotret hook 'useSignUp' zanovo!!! Ne ochen ponjatno. I v 'SignUpForm', posm. 'submitForm' */

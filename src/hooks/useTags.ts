@@ -1,7 +1,12 @@
 // @ts-nocheck
+/* Core */
 import { useQuery } from 'react-query';
+
+/* Other */
 import { api } from '../api';
 
 export const useTags = () => {
-    return useQuery('tags', api.getTags);
+    const query = useQuery('tags', api.getTags);
+
+    return query;
 };

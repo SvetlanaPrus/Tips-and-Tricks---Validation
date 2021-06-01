@@ -1,7 +1,8 @@
+// @ts-nocheck
 import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { fetchify, formatDate, getTagIcon } from '../../helpers';
-import { useTipById } from '../../hooks/useTipById';
+import { useTipById } from '../../hooks';
 // import { useTipById } from '../../hooks/react-query/useTipById';
 
 export const TipView = () => {

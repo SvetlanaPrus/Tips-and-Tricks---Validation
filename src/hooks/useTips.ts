@@ -1,8 +1,11 @@
-// @ts-nocheck
+/* Core */
 import { useQuery } from 'react-query';
+
+/* Other */
 import { api } from '../api';
 
 export const useTips = () => {
-    return useQuery('tips', api.getTips);
-};
+    const result = useQuery('tips', api.getTips);
 
+    return result;
+};

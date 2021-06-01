@@ -1,3 +1,4 @@
+// @ts-nocheck
 /* Core */
 import React from 'react';
 import {
@@ -6,7 +7,11 @@ import {
 
 /* Components */
 import { Settings } from './components';
-import { TipByIdPage, AllTopicsPage, TopicsByTagPage } from './pages';
+import {
+    TipByIdPage, AllTopicsPage, TopicsByTagPage,
+} from './pages';
+import { LogInPage } from './pages/log-in';
+import { SignUpPage } from './pages/sign-up';
 
 export const App = () => {
     return (
@@ -23,6 +28,14 @@ export const App = () => {
                 <Route path = '/topics-by-tag' element = { <Outlet /> } >
                     <Route path = '/' element = { <TopicsByTagPage /> } />
                     <Route path = '/:id' element = { <TipByIdPage /> } />
+                </Route>
+
+                <Route path = '/login' element = { <Outlet /> } >
+                    <Route path = '/' element = { <LogInPage /> } />
+                </Route>
+
+                <Route path = '/signup' element = { <Outlet /> } >
+                    <Route path = '/' element = { <SignUpPage /> } />
                 </Route>
 
                 <Route path = '*' element = { <Navigate to = '/all-topics' /> } />

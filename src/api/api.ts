@@ -24,7 +24,6 @@ export const api = {
         );
 
         await waait(1000);
-        console.log(tipById);
 
         return tipById;
     },
@@ -35,5 +34,26 @@ export const api = {
         );
 
         return newTip;
+    },
+    async login(credentials) {
+        const { email, password } = credentials;
+        const { data } = await axios.get(
+            `${process.env.REACT_APP_API_URL}/auth/login`,
+            {
+                headers: {
+                    authorization: `Basic ${btoa(`${email}:${password}`)}`,
+                },
+            },
+        );
+
+        return data;
+    },
+    async signUp(credentials) {
+        const { confirmPassword, ...body } = credentials;
+        const { data } = await axios.post(
+            `${process.env.REACT_APP_API_URL}/auth/registration`, body,
+        );
+
+        return data;
     },
 };

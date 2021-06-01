@@ -25,12 +25,21 @@ export const Nav = () => {
             <NavLink to = '/topics-by-tag'>
                 <icons.Tag /> По тэгам
             </NavLink>
+            <NavLink to = ''>
+                <icons.Publish /> Опубликовать
+            </NavLink>
             <a className = { isSettingsOpen ? 'active' : '' } onClick = { handleSettingsClick }>
-                <icons.Settings />
-                Настройки
+                <icons.Settings />Настройки
             </a>
-            <a>Опубликовать</a>
-            <a>Поиск</a>
+            <NavLink to = '/login'>
+                <icons.Bolt /> Войти
+            </NavLink>
+            <NavLink to = ''>
+                <icons.Profile /> Профиль
+            </NavLink>
+            <NavLink to = ''>
+                <icons.Logout /> Выйти
+            </NavLink>
         </nav>
     );
 };
